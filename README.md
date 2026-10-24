@@ -10,6 +10,8 @@ sudo mkdir /usr/src/geekbook_ec-0.1/
 sudo cp geekbook_ec.c Makefile dkms.conf /usr/src/geekbook_ec-0.1/
 sudo dkms install geekbook_ec/0.1
 sudo modprobe geekbook_ec
+echo geekbook_ec | sudo tee /etc/modules-load.d/geekbook_ec.conf
+sudo systemctl restart systemd-modules-load
 ```
 
 **Uninstall**
